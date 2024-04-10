@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f374c; /* Set background color of the body */
+}
+
+  /* Calculator container */
+  .calculator {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #2f374c;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+  }
+  /* Calculator display */
+  #display {
+    background-color: #181F32;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: right;
+    border-radius: 10px;
+    font-size: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+  }
+  /* Calculator buttons grid */
+  .calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+    background-color: #252D44;
+    padding: 30px;
+    border-radius: 10px;
+    
+  }
+  /* Calculator button */
+  .button {
+    background-color: #EAE3DB;
+    border: none;
+    color: #3B4664;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+    font-weight: bold;
+  }
+  .button:hover {
+    background-color: #555;
+  }
+  /* Special buttons styling */
+  .button.operator {
+    
+  }
+  .button.double {
+    grid-column: span 2; /* Makes the button twice as wide */
+  }
+  
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  <!-- Row 1 -->
+  <div id="display"></div>
+  <div class="calculator-keys">
+    
+    <!-- Row 2 -->
+    <button class="button" value="7" onclick="appendToDisplay('7')">7</button>
+    <button class="button" value="8" onclick="appendToDisplay('8')">8</button>
+    <button class="button" value="9" onclick="appendToDisplay('9')">9</button>
+    <button class="button operator" value="DEL" style="background-color: #647299; color: white;" onclick="handleOperator('DEL')">DEL</button>
+    <!-- Row 3 -->
+    <button class="button" value="4" onclick="appendToDisplay('4')">4</button>
+    <button class="button" value="5" onclick="appendToDisplay('5')">5</button>
+    <button class="button" value="6" onclick="appendToDisplay('6')">6</button>
+    <button class="button operator" value="+" onclick="handleOperator('+')">+</button>
+    <!-- Row 4 -->
+    <button class="button" value="1" onclick="appendToDisplay('1')">1</button>
+    <button class="button" value="2" onclick="appendToDisplay('2')">2</button>
+    <button class="button" value="3" onclick="appendToDisplay('3')">3</button>
+    <button class="button operator" value="-" onclick="handleOperator('-')">-</button>
+    <!-- Row 5 -->
+    <button class="button" value="." onclick="appendToDisplay('.')">.</button>
+    <button class="button" value="0" onclick="appendToDisplay('0')">0</button>
+    <button class="button operator" value="/" onclick="handleOperator('/')">/</button>
+<button class="button operator" value="*" onclick="handleOperator('*')">*</button>
+    <!-- Row 6 -->
+    <button class="button double" value="all-clear" style ="background-color: #647299; color: white;" onclick="clearDisplay()">RESET</button>
+    <button class="button double" value="=" style ="background-color: red; color: white;" onclick="calculate()">=</button>
+  </div>
+</div>
+<script>
+const display = document.getElementById('display');
+
+function appendToDisplay(value) {
+  display.textContent += value;
+}
+
+function clearDisplay() {
+  display.textContent = '';
+}
+
+function calculate() {
+  try {
+    display.textContent = eval(display.textContent);
+  } catch (error) {
+    display.textContent = 'Error';
+  }
+}
+
+function handleOperator(operator) {
+  if (operator === 'DEL') {
+    display.textContent = display.textContent.slice(0, -1); // Remove last character
+  } else {
+    appendToDisplay(operator);
+  }
+}
+
+</script>
+</body>
+</html>
+
+
