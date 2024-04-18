@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #7ed57e;
+  }
+  
+  h1 {
+    color: #333;
+    
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 30px;
+    margin-top: 10px;
+    margin-bottom: 200px;
+  }
+  
+  .display-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+
+  .scores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .score-container {
+    flex: 0 0 45%; /* Adjust as needed */
+    margin-bottom: 10px;
+    font-weight: bold;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 5px; 
+  gap: 5px;
+  width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .score-label-user, .score-label-computer {
+    font-weight: bold;
+    
+  }
+  
+  
+  
+
+  .button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; /* Add gap between buttons */
+  }
+  
+  #rockPaperContainer {
+    display: flex;
+    gap: 50px; /* Add gap between rock and paper buttons */
+  }
+  
+  #scissorsBtn {
+    position: absolute;
+    left: 48%; /* Position in the center */
+    transform: translateX(-50%); /* Center horizontally */
+    background-image: url('scissors.png');
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 15px solid;
+    border-color: #1e931e; /* Green border for scissors button */
+    border-radius: 50%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 420px;
+  }
+  
+  /* Ripple effect */
+  #scissorsBtn:before {
+    animation: ripple 2s ease-out infinite;
+    border: solid 20px #318031;
+    border-radius: 60%;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  #scissorsBtn:after {
+    animation: ripple 2s 1s ease-out infinite;
+    border: solid 20px #4dff4d;
+    border-radius: 50%;
+    bottom: 0;
+    box-sizing: border-box;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  /* Keyframes for ripple effect */
+@keyframes ripple {
+  0% {
+    opacity: .25;
+  }
+  100% {
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+  
+  
+  
+  
+  
+  
+  #result {
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  
+  button {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 15px solid;
+    border-radius: 50%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .icon:before {
+    animation: ripple 2s ease-out infinite;
+    border: solid 20px #318031;
+    border-radius: 60%;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .icon:after {
+    animation: ripple 2s 1s ease-out infinite;
+    border: solid 20px #e9f7e9;
+    border-radius: 50%;
+    bottom: 0;
+    box-sizing: border-box;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  @keyframes ripple {
+    0% {
+      opacity: .25;
+    }
+    100% {
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(3);
+    }
+  }
+  
+  body {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  #rockBtn {
+    border-color: #0074B6;
+    background-image: url('rock.png');
+  }
+  
+  #paperBtn {
+    border-color: #FFA943;
+    background-image: url('paper.png');
+  }
+  
+  #scissorsBtn {
+    border-color: #BD00FF;
+    background-image: url('scissors.png');
+  }
+  
+  #playAgain {
+    width: 120px; /* Set width and height to make it square */
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: transparent; /* Transparent background */
+    border: 5px solid #fff; /* White border */
+    border-radius: 10px; /* Rounded corners */
+    color: #fff; /* White text color */
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin-top: 170px;
+  
+  }
+  
+  .play-again-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+   /* Add margin to separate from player choices */
+  }
+  
+
+  #rules {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    cursor: pointer;
+  }
+  
+  #rules-content {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  #rules-content p {
+    margin: 0 0 10px 0;
+  }
+  
+  #close-rules {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    cursor: pointer;
+  }
+  

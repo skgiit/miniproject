@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body><div class="main">
+
+  <div class="display-container">
+    <div>
+      <h1>ROCK<br> PAPER<br> SCISORRS</h1>
+    </div>
+    <div class="scores">
+      <div class="score-container">
+        <div class="score-label-user">User</div>
+        <div id="userScore" class="score">0</div>
+      </div>
+      <div class="score-container">
+        <div class="score-label-computer">Computer</div>
+        <div id="computerScore" class="score">0</div>
+      </div>
+    </div>
+    <div id="result"></div>
+  </div>
+  
+
+
+  <div class="button-container">
+    <div id="rockPaperContainer">
+    <button class="icon" id="rockBtn"></button>
+    <button class="icon" id="paperBtn"></button>
+    </div>
+    <button class="icon" id="scissorsBtn"></button>   
+    <button id="rules">Rules</button>
+  </div>
+
+  <div id="roundResult" style="display: none;">
+    
+    <p id="roundOutcome"></p>
+  </div>
+  
+
+  <button id="playAgain" style="display: none;">Play Again</button>
+
+  <div id="rules-content">
+    <span id="close-rules">X</span>
+    <p>Rock beats Scissors</p>
+    <p>Paper beats Rock</p>
+    <p>Scissors beats Paper</p>
+    <p>Choose one of the options above and try to beat the computer!</p>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

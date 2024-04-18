@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors - Result</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="main">
+  <div class="display-container">
+    <div>
+      <h1>Rock Paper Scissors</h1>
+    </div>
+    <div class="choices">
+      <div class="choice">
+        <h2>Your Choice:</h2>
+        <button id="userChoiceBtn" class="icon"></button>
+      </div>
+      <div class="choice">
+        <h2>Computer's Choice:</h2>
+        <button id="computerChoiceBtn" class="icon"></button>
+      </div>
+    </div>
+    <div>
+      <button id="playAgain">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Function to get the user's choice from the URL query parameters
+  function getUserChoice() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('choice');
+  }
+
+  // Function to update the UI with the user's and computer's choices
+  function updateUI() {
+    const userChoice = getUserChoice();
+    const computerChoice = computerPlay(); // Assume you have the computerPlay function from the previous code
+
+    document.getElementById('userChoiceBtn').textContent = userChoice;
+    document.getElementById('computerChoiceBtn').textContent = computerChoice;
+    document.getElementById('userChoiceBtn').classList.add(userChoice.toLowerCase());
+    document.getElementById('computerChoiceBtn').classList.add(computerChoice.toLowerCase());
+  }
+
+// Function to handle the "Play Again" button click event
+document.getElementById('playAgain').addEventListener('click', () => {
+  window.location.href = 'index.html'; // Redirect to the index page
+});
+
+
+  // Call the updateUI function when the page loads
+  window.addEventListener('load', updateUI);
+</script>
+</body>
+</html>
